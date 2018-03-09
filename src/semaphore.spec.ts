@@ -1,7 +1,6 @@
 import { Driver } from './semaphore.driver';
 
 describe('Semaphore', () => {
-
   let driver: Driver;
 
   beforeEach(() =>
@@ -20,5 +19,4 @@ describe('Semaphore', () => {
       .when.acquiringSemaphoreMoreThanItAllowsAndReleasingThem()
       .then(() =>
         expect(driver.get.amountOfPromisesDone()).toEqual(driver.get.amountOfPromisesStarted())));
-
 });

@@ -1,7 +1,6 @@
 import { Driver } from './queue.driver';
 
 describe('Queue', () => {
-
   let driver: Driver;
 
   beforeEach(() =>
@@ -14,5 +13,4 @@ describe('Queue', () => {
       .then(() =>
         expect(driver.get.eventualValue())
           .toEqual(driver.get.valueOfThePromiseThatWasStartedLast())));
-
 });

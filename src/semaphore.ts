@@ -32,21 +32,15 @@ class Semaphore {
 class Deferred {
   readonly promise: Promise<void>;
   private res: () => void;
-  private rej: () => void;
 
   constructor() {
-    this.promise = new Promise((resolve, reject) => {
-      this.resolve = resolve;
-      this.reject = reject;
+    this.promise = new Promise(res => {
+      this.res = res;
     });
   }
 
   resolve() {
     this.res();
-  }
-
-  reject() {
-    this.rej();
   }
 }
 

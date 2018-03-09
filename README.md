@@ -1,8 +1,11 @@
-![Logo](logo.svg)
+![Logo](logo.png)
 # ConcurrentP
 Promise concurrency control done right
 
 [![Travis](https://img.shields.io/travis/illBeRoy/concurrentp.svg?style=flat-square)](https://travis-ci.org/illBeRoy/concurrentp/)
+[![npm](https://img.shields.io/npm/v/concurrentp.svg?style=flat-square)
+](https://www.npmjs.com/package/concurrentp)
+
 
 
 ## Abstract
@@ -89,9 +92,9 @@ async function iHaveOnlyTwoHands() {
 ```
 
 ### Queue
-The Queue object is used as rollback guard: it makes sure that results of recent instances of an operation cannot be overwritten by earlier ones. This is extremely useful in cases where one operation comes instead of another, but the other completed first, which can lead to a outdated result overriden the most recent one.
+The Queue object is used as rollback guard: it makes sure that results of recent instances of an operation cannot be overwritten by earlier ones. This is extremely useful in cases where one operation comes instead of another, but the other completed first, which can lead to a outdated result overwritting the most recent one.
 
-The Queue provides you with a "ticket" system. Whenever you want to use a queue, acquire a ticket, and then go on and perform an async operation. When it's done, check if your ticket is still up to date - and if it is, it means it is safe for you to carry on and no rollback will occure.
+The Queue provides you with a "tickets" system. Whenever you want to use a queue, acquire a ticket, and then go on and perform an async operation. When it's done, check if your ticket is still up to date - and if it is, it means it is safe for you to carry on and no rollback will occure.
 
 The Queue object prevents rollbacks, but it **does not** prevent older promises from resolving, if they were the most recent ones to do so.
 

@@ -12,11 +12,15 @@ class Driver {
     const value = this.valueOfThePromiseThatWasStartedLast;
     const ticket = this.queue.acquire();
 
-    await new Promise(res => setTimeout(res, Math.floor(Math.random() * 50)));
+    await this.someAsyncOperationThatMightFinishBeforeEarlierInstancesOfIt();
 
     if (this.queue.isMostRecent(ticket)) {
       this.eventualValue = value;
     }
+  }
+
+  private someAsyncOperationThatMightFinishBeforeEarlierInstancesOfIt() {
+    return new Promise(res => setTimeout(res, Math.floor(Math.random() * 50)));
   }
 
   private waitPromisesDone() {
