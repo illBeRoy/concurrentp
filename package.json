@@ -1,6 +1,6 @@
 {
   "name": "concurrentp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Promise concurrency control done right",
   "repository": "git@github.com:illberoy/concurrentp",
   "author": "Roy Sommer",
@@ -10,7 +10,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "prepublishOnly": "npm test && npm build",
+    "prepublish": "npm test && npm run build",
     "test": "jest"
   },
   "files": [
