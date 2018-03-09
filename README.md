@@ -2,7 +2,7 @@
 # ConcurrentP
 Promise concurrency control done right
 
-![Travis](https://img.shields.io/travis/illBeRoy/concurrentp.svg?style=flat-square)
+[![Travis](https://img.shields.io/travis/illBeRoy/concurrentp.svg?style=flat-square)](https://travis-ci.org/illBeRoy/concurrentp/)
 
 
 ## Abstract
