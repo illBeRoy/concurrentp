@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "prepublishOnly": "npm test && npm run build",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "files": [
     "dist"
